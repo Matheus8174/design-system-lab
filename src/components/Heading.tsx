@@ -4,10 +4,11 @@ import clsx from 'clsx';
 
 export type HeadingProps = PropsWithChildren<{
   size?: 'sm' | 'md' | 'lg',
-  asChild?: boolean
+  asChild?: boolean,
+  className?: string
 }>
 
-const Heading: React.FC <HeadingProps> = ({ size = 'md', children, asChild }) => {
+const Heading: React.FC <HeadingProps> = ({ size = 'md', children, asChild, className }) => {
   const Comp = asChild ? Slot : 'h2'
 
   return (
@@ -18,8 +19,11 @@ const Heading: React.FC <HeadingProps> = ({ size = 'md', children, asChild }) =>
           'text-lg': size === 'sm',
           'text-xl': size === 'md',
           'text-2xl': size === 'lg'
-        }
-      )}
+        },
+        className
+      )
+    }
+
     >
       { children }
     </Comp>
