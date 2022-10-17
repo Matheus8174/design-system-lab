@@ -7,13 +7,17 @@ module.exports = {
     "@storybook/addon-a11y",
     "@storybook/addon-links",
     "@storybook/addon-essentials",
-    "@storybook/addon-interactions"
+    "@storybook/addon-interactions",
   ],
   "framework": "@storybook/react",
   "core": {
     "builder": "@storybook/builder-vite"
   },
   "features": {
-    "storyStoreV7": true
-  }
+    "storyStoreV7": true,
+    "interactionsDebugger": true
+  },
+  "staticDirs": [
+    "../public"
+  ]
 }
